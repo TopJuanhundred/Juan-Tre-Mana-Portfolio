@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Juan "Tre" Manalus — Game Designer</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;500;700&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+  <style>
+    *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+    :root{--purple:#7F77DD;--purple-light:#AFA9EC;--purple-dim:rgba(127,119,221,.15);
+    --purple-border:rgba(127,119,221,.35);--bg:#0d0d0f;--bg-card:#13131a;--bg-surface:#1a1a22;
+    --text:#f0f0f0;--text-muted:#888;--text-dim:#555;--border:#2a2a35;--border-soft:#1e1e24}
+    html{scroll-behavior:smooth}
+    body{background:var(--bg);color:var(--text);font-family:'DM Sans',sans-serif;line-height:1.7}
+    nav{display:flex;justify-content:space-between;align-items:center;padding:1.25rem 3rem;
+        background:rgba(13,13,15,.9);backdrop-filter:blur(12px);border-bottom:.5px solid var(--border-soft);
+        position:sticky;top:0;z-index:100}
+    .nav-logo{font-family:'Syne',sans-serif;font-weight:700;color:var(--text);text-decoration:none}
+    .nav-logo span{color:var(--purple)}
+    .nav-links{display:flex;gap:2rem}
+    .nav-links a{color:var(--text-muted);text-decoration:none;font-size:14px}
+    .nav-links a:hover{color:var(--text)}
+    .hero{padding:7rem 3rem 6rem;text-align:center;position:relative;overflow:hidden}
+    .hero-glow{position:absolute;top:-100px;left:50%;transform:translateX(-50%);width:700px;height:400px;
+      background:radial-gradient(ellipse,rgba(127,119,221,.2) 0%,transparent 65%)}
+    .hero-tag{display:inline-block;background:var(--purple-dim);color:var(--purple-light);
+      border:.5px solid var(--purple-border);border-radius:20px;font-size:11px;padding:5px 16px;
+      margin-bottom:2rem;letter-spacing:.12em;text-transform:uppercase}
+    h1{font-family:'Syne',sans-serif;font-size:clamp(40px,7vw,72px);line-height:1.05;margin-bottom:1.25rem}
+    h1 span{color:var(--purple)}
+    .hero-sub{font-size:17px;color:var(--text-muted);max-width:480px;margin:0 auto 2.5rem}
+    .hero-btns{display:flex;gap:12px;justify-content:center;flex-wrap:wrap}
+    .btn{display:inline-flex;align-items:center;padding:11px 22px;border-radius:8px;font-size:14px;
+      text-decoration:none;border:.5px solid var(--border);color:var(--text);background:var(--bg-surface)}
+    .btn.primary{background:var(--purple);border-color:var(--purple);color:#fff}
+    section{padding:5rem 3rem;max-width:960px;margin:0 auto}
+    .section-label{font-size:11px;text-transform:uppercase;letter-spacing:.12em;color:var(--purple);margin-bottom:.5rem}
+    .section-title{font-family:'Syne',sans-serif;font-size:32px;margin-bottom:2.5rem}
+    .about-text{color:#aaa;line-height:1.85;margin-bottom:1.25rem;max-width:680px}
+    .skills-row,.game-tags{display:flex;flex-wrap:wrap;gap:8px;margin-top:1.5rem}
+    .skill-pill,.tag{font-size:13px;padding:5px 14px;border-radius:20px;background:var(--bg-surface);
+      color:#bbb;border:.5px solid var(--border)}
+    .games-grid,.contact-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:1.5rem}
+    .contact-grid{grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:1rem}
+    .game-card,.doc-card,.contact-item{background:var(--bg-card);border:.5px solid var(--border);border-radius:14px}
+    .game-thumb{height:170px;display:flex;align-items:center;justify-content:center;font-size:52px;
+      border-bottom:.5px solid var(--border)}
+    .thumb-move{background:linear-gradient(135deg,#1a1a2e 0%,#0d0d1a 100%)}
+    .thumb-proc{background:linear-gradient(135deg,#1c1508 0%,#0f0c04 100%)}
+    .game-body,.doc-card{padding:1.5rem}
+    .doc-card{display:flex;gap:1.5rem}
+    .doc-icon,.contact-icon{display:flex;align-items:center;justify-content:center;background:var(--purple-dim)}
+    .doc-icon{width:56px;height:56px;border-radius:12px;font-size:28px;flex-shrink:0}
+    .contact-item{padding:1.25rem;text-decoration:none;color:inherit;display:flex;gap:12px;align-items:center}
+    .contact-icon{width:36px;height:36px;border-radius:8px}
+    .divider{border:none;border-top:.5px solid var(--border-soft);max-width:960px;margin:0 auto}
+    footer{text-align:center;padding:2.5rem;border-top:.5px solid var(--border-soft);color:var(--text-dim);font-size:13px}
+    @media (max-width:700px){nav,.hero,section{padding-left:1.5rem;padding-right:1.5rem}.nav-links{display:none}.doc-card{flex-direction:column}}
+  </style>
+</head>
+<body>
+  <nav>
+    <a href="#" class="nav-logo">Tre <span>Manalus</span></a>
+    <div class="nav-links">
+      <a href="#about">About</a><a href="#games">Games</a><a href="#document">Design Doc</a><a href="#contact">Contact</a>
+    </div>
+  </nav>
+
+  <div class="hero">
+    <div class="hero-glow"></div>
+    <div class="hero-tag">Game Designer</div>
+    <h1>Juan <span>"Tre"</span><br>Manalus</h1>
+    <p class="hero-sub">Crafting experiences through movement, psychology, and systems design.</p>
+    <div class="hero-btns">
+      <a href="#games" class="btn primary">View My Games</a>
+      <a href="#document" class="btn">Design Document</a>
+    </div>
+  </div>
+
+  <section id="about">
+    <div class="section-label">About Me</div>
+    <div class="section-title">Who I Am</div>
+    <p class="about-text">I'm a game designer passionate about creating experiences that challenge players emotionally and mechanically. My work spans fast-paced movement games, narrative-driven psychological experiences, and systems design.</p>
+    <div class="skills-row">
+      <span class="skill-pill">Game Design</span><span class="skill-pill">Systems Design</span>
+      <span class="skill-pill">Narrative Design</span><span class="skill-pill">Unreal Engine</span>
+      <span class="skill-pill">Level Design</span><span class="skill-pill">GDD Writing</span>
+    </div>
+  </section>
+
+  <hr class="divider">
+
+  <section id="games">
+    <div class="section-label">Projects</div>
+    <div class="section-title">Games</div>
+    <div class="games-grid">
+      <div class="game-card">
+        <div class="game-thumb thumb-move">🏃</div>
+        <div class="game-body">
+          <h3>Platform Demo</h3>
+          <p class="about-text">A movement-based platformer focused on fluid mechanics and player expression.</p>
+          <a href="https://tremanalus.itch.io/platformtest" target="_blank" class="btn primary">Play on itch.io</a>
+        </div>
+      </div>
+      <div class="game-card">
+        <div class="game-thumb thumb-proc">⏳</div>
+        <div class="game-body">
+          <h3>UnSpoken</h3>
+          <p class="about-text">A game about procrastination, avoidance, and the anxiety of unfinished work.</p>
+          <a href="https://tremanalus.itch.io/unspoken" target="_blank" class="btn primary">Play on itch.io</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <hr class="divider">
+
+  <section id="document">
+    <div class="section-label">Writing</div>
+    <div class="section-title">Design Document</div>
+    <div class="doc-card">
+      <div class="doc-icon">📄</div>
+      <div>
+        <h3>False Conduct (Working Title)</h3>
+        <p class="about-text">A full game design document exploring ASPD through mechanics, narrative, and systems design.</p>
+        <a href="False-Conduct-Game-Design-Document.pdf" download class="btn primary">Download GDD (PDF)</a>
+      </div>
+    </div>
+  </section>
+
+  <hr class="divider">
+
+  <section id="contact">
+    <div class="section-label">Get In Touch</div>
+    <div class="section-title">Contact</div>
+    <div class="contact-grid">
+      <a href="https://tremanalus.itch.io" target="_blank" class="contact-item"><div class="contact-icon">🎮</div><div>itch.io</div></a>
+      <a href="https://www.linkedin.com/in/juan-manalus-b15571343" target="_blank" class="contact-item"><div class="contact-icon">💼</div><div>LinkedIn</div></a>
+    </div>
+  </section>
+
+  <footer>© 2026 Juan "Tre" Manalus — Game Designer</footer>
+</body>
+</html>
